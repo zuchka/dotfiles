@@ -1,0 +1,1203 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": 14728,
+  "graphTooltip": 2,
+  "id": 10,
+  "iteration": 1629163782583,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Shows the total number of connections made",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 6,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.1.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "rate(node_ipvs_connections_total{job=~\"$job\", instance=~\"$node\"}[$__rate_interval])",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "LVS Total connections",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:346",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:347",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Shows the total amount of incoming/outocming data",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 6
+      },
+      "hiddenSeries": false,
+      "id": 7,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.1.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "rate(node_ipvs_incoming_bytes_total{job=~\"$job\", instance=~\"$node\"}[$__rate_interval])",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "Incoming {{instance}}",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(node_ipvs_outgoing_bytes_total{job=~\"$job\", instance=~\"$node\"}[$__rate_interval])",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Outgoing {{instance}}",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "LVS Total data",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:346",
+          "format": "decbytes",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:347",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Shows the total amount of incoming/outocoming packets",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 6
+      },
+      "hiddenSeries": false,
+      "id": 8,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.1.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "rate(node_ipvs_incoming_packets_total{job=~\"$job\", instance=~\"$node\"}[$__rate_interval])",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "Incoming {{instance}}",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(node_ipvs_outgoing_packets_total{job=~\"$job\", instance=~\"$node\"}[$__rate_interval])",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Outgoing {{instance}}",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "LVS Total packets",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:346",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:347",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 13
+      },
+      "hiddenSeries": false,
+      "id": 2,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.1.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_active{job=~\"$job\", instance=~\"$node\", local_mark=\"$143_hex\", remote_address=~\"$remote_target\"}",
+          "interval": "",
+          "legendFormat": "{{remote_address}}:143",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_active{job=~\"$job\", instance=~\"$node\", local_mark=\"$25_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:25",
+          "refId": "C"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_active{job=~\"$job\", instance=~\"$node\", local_mark=\"$443_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:443",
+          "refId": "D"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_active{job=~\"$job\", instance=~\"$node\", local_mark=\"$465_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:465",
+          "refId": "B"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_active{job=~\"$job\", instance=~\"$node\", local_mark=\"$587_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:587",
+          "refId": "E"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_active{job=~\"$job\", instance=~\"$node\", local_mark=\"$993_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:993",
+          "refId": "F"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_active{job=~\"$job\", instance=~\"$node\", local_mark=\"$5222_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:5222",
+          "refId": "G"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_active{job=~\"$job\", instance=~\"$node\", local_mark=\"$5223_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:5223",
+          "refId": "H"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_active{job=~\"$job\", instance=~\"$node\", local_mark=\"$5229_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:5229",
+          "refId": "I"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "LVS Active connections",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transformations": [],
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:116",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:117",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 22
+      },
+      "hiddenSeries": false,
+      "id": 3,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.1.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_inactive{job=~\"$job\", instance=~\"$node\", local_mark=\"$143_hex\", remote_address=~\"$remote_target\"}",
+          "interval": "",
+          "legendFormat": "{{remote_address}}:143",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_inactive{job=~\"$job\", instance=~\"$node\", local_mark=\"$25_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:25",
+          "refId": "C"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_inactive{job=~\"$job\", instance=~\"$node\", local_mark=\"$443_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:443",
+          "refId": "D"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_inactive{job=~\"$job\", instance=~\"$node\", local_mark=\"$465_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:465",
+          "refId": "B"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_inactive{job=~\"$job\", instance=~\"$node\", local_mark=\"$587_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:587",
+          "refId": "E"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_inactive{job=~\"$job\", instance=~\"$node\", local_mark=\"$993_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:993",
+          "refId": "F"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_inactive{job=~\"$job\", instance=~\"$node\", local_mark=\"$5222_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:5222",
+          "refId": "G"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_inactive{job=~\"$job\", instance=~\"$node\", local_mark=\"$5223_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:5223",
+          "refId": "H"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_connections_inactive{job=~\"$job\", instance=~\"$node\", local_mark=\"$5229_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:5229",
+          "refId": "I"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "LVS InActive connections",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transformations": [],
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:116",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:117",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "datasource": null,
+      "description": "Shows weight for each real IP address and PORT",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 31
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.1.0",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_weight{job=~\"$job\", instance=~\"$node\", local_mark=\"$143_hex\", remote_address=~\"$remote_target\"}",
+          "interval": "",
+          "legendFormat": "{{remote_address}}:143",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_weight{job=~\"$job\", instance=~\"$node\", local_mark=\"$25_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:25",
+          "refId": "C"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_weight{job=~\"$job\", instance=~\"$node\", local_mark=\"$443_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:443",
+          "refId": "D"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_weight{job=~\"$job\", instance=~\"$node\", local_mark=\"$465_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:465",
+          "refId": "B"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_weight{job=~\"$job\", instance=~\"$node\", local_mark=\"$587_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:587",
+          "refId": "E"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_weight{job=~\"$job\", instance=~\"$node\", local_mark=\"$993_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:993",
+          "refId": "F"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_weight{job=~\"$job\", instance=~\"$node\", local_mark=\"$5222_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:5222",
+          "refId": "G"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_weight{job=~\"$job\", instance=~\"$node\", local_mark=\"$5223_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:5223",
+          "refId": "H"
+        },
+        {
+          "exemplar": true,
+          "expr": "node_ipvs_backend_weight{job=~\"$job\", instance=~\"$node\", local_mark=\"$5229_hex\", remote_address=~\"$remote_target\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{remote_address}}:5229",
+          "refId": "I"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "LVS Weight",
+      "transformations": [],
+      "type": "stat"
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 30,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "Prometheus",
+        "definition": "label_values(node_uname_info, job)",
+        "description": null,
+        "error": {
+          "config": {
+            "data": {
+              "end": "1629163783",
+              "match[]": "node_uname_info",
+              "start": "1629161983"
+            },
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "X-Grafana-Org-Id": 1
+            },
+            "hideFromInspector": true,
+            "method": "POST",
+            "retry": 0,
+            "url": "api/datasources/proxy/3/api/v1/series"
+          },
+          "data": {
+            "error": "Bad Gateway",
+            "message": "Bad Gateway",
+            "response": ""
+          },
+          "message": "Bad Gateway",
+          "status": 502,
+          "statusText": "Bad Gateway"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Job",
+        "multi": true,
+        "name": "job",
+        "options": [],
+        "query": {
+          "query": "label_values(node_uname_info, job)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "Prometheus",
+        "definition": "label_values(node_uname_info{job=\"$job\"}, instance)",
+        "description": null,
+        "error": {
+          "config": {
+            "data": {
+              "end": "1629163783",
+              "match[]": "node_uname_info{job=\"\"}",
+              "start": "1629161983"
+            },
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "X-Grafana-Org-Id": 1
+            },
+            "hideFromInspector": true,
+            "method": "POST",
+            "retry": 0,
+            "url": "api/datasources/proxy/3/api/v1/series"
+          },
+          "data": {
+            "error": "Bad Gateway",
+            "message": "Bad Gateway",
+            "response": ""
+          },
+          "message": "Bad Gateway",
+          "status": 502,
+          "statusText": "Bad Gateway"
+        },
+        "hide": 0,
+        "includeAll": true,
+        "label": "Balancer:",
+        "multi": true,
+        "name": "node",
+        "options": [],
+        "query": {
+          "query": "label_values(node_uname_info{job=\"$job\"}, instance)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "description": "25 in hex",
+        "error": null,
+        "hide": 2,
+        "label": null,
+        "name": "25_hex",
+        "query": "00000019",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "description": "143 in hex",
+        "error": null,
+        "hide": 2,
+        "label": null,
+        "name": "143_hex",
+        "query": "0000008F",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "description": "443 in hex",
+        "error": null,
+        "hide": 2,
+        "label": null,
+        "name": "443_hex",
+        "query": "000001BB",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "description": "465 in hex",
+        "error": null,
+        "hide": 2,
+        "label": null,
+        "name": "465_hex",
+        "query": "000001D1",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "description": "587 in hex",
+        "error": null,
+        "hide": 2,
+        "label": null,
+        "name": "587_hex",
+        "query": "0000024B",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "description": "993 in hex",
+        "error": null,
+        "hide": 2,
+        "label": null,
+        "name": "993_hex",
+        "query": "000003E1",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "description": "5222 in hex",
+        "error": null,
+        "hide": 2,
+        "label": null,
+        "name": "5222_hex",
+        "query": "00001466",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "description": "5223 in hex",
+        "error": null,
+        "hide": 2,
+        "label": null,
+        "name": "5223_hex",
+        "query": "00001467",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "description": "5229 in hex",
+        "error": null,
+        "hide": 2,
+        "label": null,
+        "name": "5229_hex",
+        "query": "0000146D",
+        "skipUrlSync": false,
+        "type": "constant"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "Prometheus",
+        "definition": "label_values(node_uname_info{job=\"$job\"}, instance)",
+        "description": null,
+        "error": {
+          "config": {
+            "data": {
+              "end": "1629163783",
+              "match[]": "node_uname_info{job=\"\"}",
+              "start": "1629161983"
+            },
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "X-Grafana-Org-Id": 1
+            },
+            "hideFromInspector": true,
+            "method": "POST",
+            "retry": 0,
+            "url": "api/datasources/proxy/3/api/v1/series"
+          },
+          "data": {
+            "error": "Bad Gateway",
+            "message": "Bad Gateway",
+            "response": ""
+          },
+          "message": "Bad Gateway",
+          "status": 502,
+          "statusText": "Bad Gateway"
+        },
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "node_ip",
+        "options": [],
+        "query": {
+          "query": "label_values(node_uname_info{job=\"$job\"}, instance)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "/([^:]+):.*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "Prometheus",
+        "definition": "label_values(node_uname_info{job=\"$job\"}, instance)",
+        "description": null,
+        "error": {
+          "config": {
+            "data": {
+              "end": "1629163783",
+              "match[]": "node_uname_info{job=\"\"}",
+              "start": "1629161983"
+            },
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "X-Grafana-Org-Id": 1
+            },
+            "hideFromInspector": true,
+            "method": "POST",
+            "retry": 0,
+            "url": "api/datasources/proxy/3/api/v1/series"
+          },
+          "data": {
+            "error": "Bad Gateway",
+            "message": "Bad Gateway",
+            "response": ""
+          },
+          "message": "Bad Gateway",
+          "status": 502,
+          "statusText": "Bad Gateway"
+        },
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "port",
+        "options": [],
+        "query": {
+          "query": "label_values(node_uname_info{job=\"$job\"}, instance)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "/[^:]+:(.*)/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": [
+            "465",
+            "587",
+            "25"
+          ],
+          "value": [
+            "000001D1",
+            "0000024B",
+            "00000019"
+          ]
+        },
+        "description": "Provide list of ports, where loadbalancers redirects traffic",
+        "error": null,
+        "hide": 2,
+        "includeAll": true,
+        "label": "Loadbalancers target ports",
+        "multi": true,
+        "name": "target_ports",
+        "options": [
+          {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": true,
+            "text": "25",
+            "value": "00000019"
+          },
+          {
+            "selected": false,
+            "text": "143",
+            "value": "0000008F"
+          },
+          {
+            "selected": false,
+            "text": "443",
+            "value": "000001BB"
+          },
+          {
+            "selected": true,
+            "text": "465",
+            "value": "000001D1"
+          },
+          {
+            "selected": true,
+            "text": "587",
+            "value": "0000024B"
+          },
+          {
+            "selected": false,
+            "text": "993",
+            "value": "000003E1"
+          },
+          {
+            "selected": false,
+            "text": "5222",
+            "value": "00001467"
+          },
+          {
+            "selected": false,
+            "text": "5223",
+            "value": "00001467"
+          },
+          {
+            "selected": false,
+            "text": "5229",
+            "value": "0000146D"
+          }
+        ],
+        "query": "25 : 00000019, 143 : 0000008F, 443 : 000001BB, 465 : 000001D1, 587 : 0000024B, 993 : 000003E1, 5222 : 00001467, 5223 : 00001467, 5229 : 0000146D",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "Prometheus",
+        "definition": "label_values(node_ipvs_backend_weight, remote_address)",
+        "description": "Select loadbalancer target hosts.",
+        "error": {
+          "config": {
+            "data": {
+              "end": "1629163783",
+              "match[]": "node_ipvs_backend_weight",
+              "start": "1629161983"
+            },
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "X-Grafana-Org-Id": 1
+            },
+            "hideFromInspector": true,
+            "method": "POST",
+            "retry": 0,
+            "url": "api/datasources/proxy/3/api/v1/series"
+          },
+          "data": {
+            "error": "Bad Gateway",
+            "message": "Bad Gateway",
+            "response": ""
+          },
+          "message": "Bad Gateway",
+          "status": 502,
+          "statusText": "Bad Gateway"
+        },
+        "hide": 0,
+        "includeAll": true,
+        "label": "Remote  targets",
+        "multi": true,
+        "name": "remote_target",
+        "options": [],
+        "query": {
+          "query": "label_values(node_ipvs_backend_weight, remote_address)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 3,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-30m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "LVS (Linux Virtual Servers) JSON RAW",
+  "uid": "C7RRRu44zdd",
+  "version": 1
+}
+
